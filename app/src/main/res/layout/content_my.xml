@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_my"
+    android:id="@+id/content_activity_my">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send"
+        android:id="@+id/button_enter"
+        android:onClick="enterPostMessage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#afd7ed" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_load"
+        android:id="@+id/button_load"
+        android:onClick="getJSON"
+        android:layout_toEndOf="@+id/button_enter"
+        android:background="#5ca7ba"
+        android:layout_toRightOf="@+id/button_enter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_json"
+        android:id="@+id/textView_getjson"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/button_load"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/button_load"
+        android:padding="7dp" />
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="200dp" />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:name="com.project.first.myfirstapp.MyFragment"
+        android:id="@+id/fragment"
+        android:layout_below="@+id/button_enter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView_getjson"
+        android:layout_toStartOf="@+id/textView_getjson" />
+
+
+</RelativeLayout>
